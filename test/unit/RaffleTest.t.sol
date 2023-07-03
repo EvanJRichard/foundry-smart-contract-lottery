@@ -128,9 +128,6 @@ contract RaffleTest is StdCheats, Test {
         assert(upkeepNeeded == false);
     }
 
-    // Can you implement this?
-    function testCheckUpkeepReturnsFalseIfEnoughTimeHasntPassed() public {}
-
     function testCheckUpkeepReturnsTrueWhenParametersGood() public {
         // Arrange
         vm.prank(PLAYER);
@@ -225,7 +222,7 @@ contract RaffleTest is StdCheats, Test {
         // Arrange
         // Act / Assert
         vm.expectRevert("nonexistent request");
-        // vm.mockCall could be used here...
+        // vm.mockCall could be used here.
         VRFCoordinatorV2Mock(vrfCoordinatorV2).fulfillRandomWords(
             0,
             address(raffle)
