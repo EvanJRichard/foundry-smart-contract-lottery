@@ -79,7 +79,7 @@ contract RaffleTest is StdCheats, Test {
         // Arrange
         // Act / Assert
         vm.expectRevert("nonexistent request");
-        // vm.mockCall could be used here...
+        // vm.mockCall could be used here.
         VRFCoordinatorV2Mock(vrfCoordinatorV2).fulfillRandomWords(
             0,
             address(raffle)
@@ -102,7 +102,7 @@ contract RaffleTest is StdCheats, Test {
 
         // Arrange
         uint256 additionalEntrances = 3;
-        uint256 startingIndex = 1; // We have starting index be 1 so we can start with address(1) and not address(0)
+        uint256 startingIndex = 1; // start with address(1) and not address(0)
 
         for (
             uint256 i = startingIndex;

@@ -8,7 +8,7 @@ import {AddConsumer, CreateSubscription, FundSubscription} from "./Interactions.
 
 contract DeployRaffle is Script {
     function run() external returns (Raffle, HelperConfig) {
-        HelperConfig helperConfig = new HelperConfig(); // This comes with our mocks!
+        HelperConfig helperConfig = new HelperConfig(); // in mocks
         AddConsumer addConsumer = new AddConsumer();
         (
             uint64 subscriptionId,
@@ -48,7 +48,7 @@ contract DeployRaffle is Script {
         );
         vm.stopBroadcast();
 
-        // We already have a broadcast in here
+        // addConsumer broadcasts the transaction, so we don't need to start and stop the broadcast
         addConsumer.addConsumer(
             address(raffle),
             vrfCoordinatorV2,
