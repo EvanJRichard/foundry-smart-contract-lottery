@@ -138,7 +138,7 @@ You can estimate how much gas things cost by running:
 forge snapshot
 ```
 
-And you'll see and output file called `.gas-snapshot`
+And you'll see an output file called `.gas-snapshot`
 
 # Formatting
 
